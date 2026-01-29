@@ -21,6 +21,7 @@ local Window = Library:CreateWindow({
 
 -- Buat Tab Main
 local MainTab = Window:AddTab("Main")
+dofile("features.lua")
 
 -- ===== Contoh Button =====
 MainTab:AddButton("Test Button", function()
