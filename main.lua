@@ -3,7 +3,7 @@ local Library = loadstring(game:HttpGet("https://script.vinzhub.com/library"))()
 
 -- Create Window
 local Window = Library:CreateWindow({
-    Title = "SilverHub",
+    Title = "Silver Rly",
     Center = true,
     AutoShow = true
 })
