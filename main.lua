@@ -1,5 +1,5 @@
 -- Load Library
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/amabar49-boop/silver-rly/main/main.lua"))()
+local Library = loadstring(game:HttpGet("https://script.vinzhub.com/library"))()
 
 -- Create Window
 local Window = Library:CreateWindow({
