@@ -45,6 +45,32 @@ MainTab:AddSlider("WalkSpeed", {
     end
 end)
 
+-- Buat Tab Main
+local MainTab = Window:AddTab("Pepek")
+dofile("features.lua")
+
+-- ===== Contoh Button =====
+MainTab:AddButton("Test Button", function()
+    print("Button ditekan!")
+end)
+
+-- ===== Contoh Toggle =====
+MainTab:AddToggle("Test Toggle", false, function(Value)
+    print("Toggle:", Value)
+end)
+
+-- ===== Contoh Slider =====
+MainTab:AddSlider("WalkSpeed", {
+    Min = 16,
+    Max = 100,
+    Default = 16
+}, function(Value)
+    local plr = game.Players.LocalPlayer
+    if plr.Character and plr.Character:FindFirstChild("Humanoid") then
+        plr.Character.Humanoid.WalkSpeed = Value
+    end
+end)
+
 -- ===== Contoh Keybind =====
 MainTab:AddKeybind("Toggle UI", Enum.KeyCode.RightShift, function()
     Window:Toggle()
