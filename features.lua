@@ -1,49 +1,46 @@
 -- ambil Library dari main.lua
 local Library = getgenv().Library
-if not Library then
-    warn("Library belum keload")
-    return
-end
+if not Library then return end
 
--- buat window utama
+-- window
 local Window = Library:CreateWindow({
-    Title = "Silver RLY",
+    Title = "SilverRly",
     Center = true,
     AutoShow = true
 })
 
--- buat tab
-local MainTab = Window:AddTab("Main")
+-- TAB MAIN (INI YANG KAMU LIHAT DI GAMBAR)
+local Main = Window:AddTab("Main")
 
--- === CONTOH BUTTON ===
-MainTab:AddButton({
-    Title = "Test Button",
+-- =========================
+-- ISI MENU DI TAB MAIN
+-- =========================
+
+-- BUTTON 1
+Main:AddButton({
+    Title = "Hello",
     Callback = function()
-        print("Button ditekan!")
+        print("Hello ditekan")
     end
 })
 
--- === CONTOH TOGGLE ===
-MainTab:AddToggle({
-    Title = "Test Toggle",
-    Default = false,
-    Callback = function(value)
-        if value then
-            print("Toggle ON")
-        else
-            print("Toggle OFF")
-        end
-    end
-})
-
--- === CONTOH NOTIFY ===
-MainTab:AddButton({
-    Title = "Notify",
+-- BUTTON 2
+Main:AddButton({
+    Title = "Notify Test",
     Callback = function()
         Library:Notify({
-            Title = "Silver RLY",
-            Description = "Features.lua berhasil dimuat",
+            Title = "SilverRly",
+            Description = "Menu Main berhasil diisi",
             Time = 3
         })
+    end
+})
+
+-- TOGGLE
+Main:AddToggle({
+    Title = "Toggle Test",
+    Default = false,
+    Callback = function(v)
+        print("Toggle:", v)
     end
 })
